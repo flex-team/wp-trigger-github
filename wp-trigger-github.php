@@ -24,7 +24,7 @@ class WPTriggerGithub
   function __construct()
   {
     add_action('admin_init', [$this, 'generalSettingsSection']);
-    add_action('save_post', [$this, 'runHook'], 10, 3);
+    add_action('publish_post', [$this, 'runHook'], 10, 3);
     add_action('wp_dashboard_setup', [$this, 'buildDashboardWidget']);
   }
 
@@ -41,8 +41,18 @@ class WPTriggerGithub
 
   function runHook($post_id)
   {
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-    if (wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+      return;
+    }
+
+    if (wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) {
+      return;
+    }
+
+    if (defined( 'REST_REQUEST' ) && REST_REQUEST) { 
+      return;
+    }
+
 
     $github_token = get_option('ga_option_token');
     $github_username = get_option('ga_option_username');

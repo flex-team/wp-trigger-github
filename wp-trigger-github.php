@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package WPTriggerGithub
+ * @package WPTriggerGithubFlexteam
  */
 /*
-Plugin Name: WP Trigger Github
-Plugin URI: https://github.com/gglukmann/wp-trigger-github
-Description: Save or update action triggers Github repository_dispatch action
-Version: 1.2.3
-Author: Gert Glükmann
-Author URI: https://github.com/gglukmann
+Plugin Name: WP Trigger Github Flex
+Plugin URI: https://github.com/flex-team/wp-trigger-github
+Description: A fork of ‘WP Trigger Github’ plugin (https://github.com/gglukmann/wp-trigger-github) by Gert Glükmann.
+Version: 0.0.1
+Author: flex team
+Author URI: https://github.com/flex-team
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text-Domain: wp-trigger-github
+Text-Domain: wp-trigger-github-flexteam
  */
 
 if (!defined('ABSPATH')) {
